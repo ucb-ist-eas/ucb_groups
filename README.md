@@ -19,23 +19,23 @@ Or install it yourself as:
 ## Usage
 
 First, authenticate:
-    UcbGroups::LdapConn.authenticate(<username>,  <password>)
+  UcbGroups::LdapConn.authenticate(<username>,  <password>)
 
 Then...
 
 Get list of groups in namespace:
-    UcbGroups::CampusGroup.find("<your_namespace>")
-    => [CampusGroup, CampusGroup, etc]
+  UcbGroups::CampusGroup.find("<your_namespace>")
+  => [CampusGroup, CampusGroup, etc]
 
 Find people in one or more groups:
-    finder = UcbGroups::MembershipFinder.new("<your_namespace>")
-    people = finder.find(:groups => [grp1, grp2])
-    => [Person, Person, Person, etc]
+  finder = UcbGroups::MembershipFinder.new("<your_namespace>")
+  people = finder.find(:groups => [grp1, grp2])
+  => [Person, Person, Person, etc]
 
 Find people in groups and filter by org:
-    finder = UcbGroups::MembershipFinder.new("<your_namespace>")
-    people = finder.find(:groups => [grp1, grp2], :orgs => [:JKASD])
-    => [Person, Person, Person, etc]
+  finder = UcbGroups::MembershipFinder.new("<your_namespace>")
+  people = finder.find(:groups => [grp1, grp2], :orgs => [:JKASD])
+  => [Person, Person, Person, etc]
 
 
 ## Contributing

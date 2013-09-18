@@ -8,21 +8,22 @@ module UcbGroups
       raise(LdapBindFailedException)
     end
 
-    def self.authenticate(username, password)
+    def self.authenticate(username, password, host='nds.berkeley.edu')
       @username = username
       @password = password
+      @host = host
     end
 
     def self.authenticate_from_config(config_file)
       conf = YAML.load_file(config_file)
-      @username, @password = conf['username'], conf['password']
+      self.authenticate(conf['username'], conf['password'], conf['host'])
     end
 
     private
 
     def self.auth_info
       @auth_info ||= {
-          host: "ldap.berkeley.edu",
+          host: @host,
           auth: {
               method: :simple,
               username: @username,

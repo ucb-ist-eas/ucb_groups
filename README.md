@@ -1,12 +1,12 @@
-# CalmsgsGroups
+# UcbGroups
 
-TODO: Write a gem description
+Finds users that belong to a given ucb group
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'calmsgs_groups'
+    gem 'ucb_groups'
 
 And then execute:
 
@@ -14,11 +14,29 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install calmsgs_groups
+    $ gem install ucb_groups
 
 ## Usage
 
-TODO: Write usage instructions here
+First, authenticate:
+    UcbGroups::LdapConn.authenticate(<username>,  <password>)
+
+Then...
+
+Get list of groups in namespace:
+    UcbGroups::CampusGroup.find("<your_namespace>")
+    => [CampusGroup, CampusGroup, etc]
+
+Find people in one or more groups:
+    finder = UcbGroups::MembershipFinder.new("<your_namespace>")
+    people = finder.find(:groups => [grp1, grp2])
+    => [Person, Person, Person, etc]
+
+Find people in groups and filter by org:
+    finder = UcbGroups::MembershipFinder.new("<your_namespace>")
+    people = finder.find(:groups => [grp1, grp2], :orgs => [:JKASD])
+    => [Person, Person, Person, etc]
+
 
 ## Contributing
 

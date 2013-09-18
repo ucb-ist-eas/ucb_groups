@@ -27,22 +27,22 @@ Then...
 
 Get list of groups in namespace:
 ```
-UcbGroups::CampusGroup.find("<your_namespace>")
-=> [CampusGroup, CampusGroup, etc]
+UcbGroups::CampusGroup.find(<namespace>)
+=> [CampusGroup, CampusGroup, ...]
 ```
 
 Find people in one or more groups:
 ```
-finder = UcbGroups::MembershipFinder.new("<your_namespace>")
+finder = UcbGroups::MembershipFinder.new(<namespace>)
 people = finder.find(:groups => [grp1, grp2])
-=> [Person, Person, Person, etc]
+=> [Person, Person, Person, ...]
 ```
 
 Find people in groups and filter by org:
 ```
-finder = UcbGroups::MembershipFinder.new("<your_namespace>")
+finder = UcbGroups::MembershipFinder.new(<namespace>)
 people = finder.find(:groups => [grp1, grp2], :orgs => [:JKASD])
-=> [Person, Person, Person, etc]
+=> [Person, Person, Person, ...]
 ```
 
 ## Contributing

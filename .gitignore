@@ -9,6 +9,7 @@ _yardoc
 coverage
 doc/
 lib/bundler/man
+config/*.yml
 pkg
 rdoc
 spec/reports

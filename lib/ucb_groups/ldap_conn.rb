@@ -9,7 +9,7 @@ module UcbGroups
     end
 
     def self.authenticate(username, password, host=nil)
-
+      @username = username
       @password = password
       @host = host || 'nds.berkeley.edu'
     end

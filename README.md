@@ -27,8 +27,10 @@ Then...
 
 Get list of groups in namespace:
 ```
-UcbGroups::CampusGroup.find(<namespace>)
+groups = UcbGroups::CampusGroup.find(<namespace>)
 => [CampusGroup, CampusGroup, ...]
+groups.first
+=>
 ```
 
 Find people in one or more groups:

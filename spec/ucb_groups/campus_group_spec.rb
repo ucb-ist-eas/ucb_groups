@@ -5,7 +5,8 @@ describe "CampusGroup" do
   let(:entry) do
     {
         :dn => ["cn=edu:berkeley:app:calmessages:faculty,ou=campus groups,dc=berkeley,dc=edu"],
-        :description => ["Instructors"]
+        :description => ["UCB Instructors"],
+        :displayName => ["Instructors"]
     }
   end
 
@@ -17,9 +18,10 @@ describe "CampusGroup" do
   it "initializes an entry" do
     group = UcbGroups::CampusGroup.new(entry)
 
-    group.dn.should eql(entry[:dn].first)
+    group.id.should eql("faculty")
+    group.name.should eql("Instructors")
     group.description.should eql(entry[:description].first)
     group.namespace.should eql("calmessages")
-    group.name.should eql("faculty")
+    group.dn.should eql(entry[:dn].first)
   end
 end

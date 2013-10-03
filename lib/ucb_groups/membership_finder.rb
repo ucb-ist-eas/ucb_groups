@@ -45,7 +45,7 @@ module UcbGroups
     end
 
     def namespace_groups
-      @namespace_groups ||= CampusGroup.find(namespace).map(&:name)
+      @namespace_groups ||= CampusGroup.find(namespace).map(&:id)
     end
   end
 end

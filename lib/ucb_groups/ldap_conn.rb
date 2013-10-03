@@ -8,10 +8,10 @@ module UcbGroups
       raise(LdapBindFailedException)
     end
 
-    def self.authenticate(username, password, host='nds.berkeley.edu')
+    def self.authenticate(username, password, host)
       @username = username
       @password = password
-      @host = host
+      @host = host || 'nds.berkeley.edu'
     end
 
     def self.authenticate_from_config(config_file)

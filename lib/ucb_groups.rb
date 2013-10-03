@@ -26,6 +26,10 @@ module UcbGroups
       super("You must provide at least one group or one org")
     end
   end
+
+  def self.root
+    File.expand_path(File.join(__FILE__, '..', '..'))
+  end
 end
 
 

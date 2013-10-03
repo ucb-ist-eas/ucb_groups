@@ -29,8 +29,15 @@ Get list of groups in namespace:
 ```
 groups = UcbGroups::CampusGroup.find(<namespace>)
 => [CampusGroup, CampusGroup, ...]
-groups.first
-=>
+group = groups.first
+group.id
+=> "academic-senate-faculty"
+group.name
+=> "Academic Senate Faculty"
+group.description
+=> "All ladder-ranked faculty"
+group.namespace
+=> "calmessages"
 ```
 
 Find people in one or more groups:
@@ -38,6 +45,17 @@ Find people in one or more groups:
 finder = UcbGroups::MembershipFinder.new(<namespace>)
 people = finder.find(:groups => [grp1, grp2])
 => [Person, Person, Person, ...]
+person = people.first
+person.uid
+=> 666
+person.first_name
+=> "Joe"
+person.last_name
+=> "Smith"
+person.email
+=> "email@berkeley.edu"
+person.orgs
+=> "UCBKL-SCHOL-SCHSW-CSDEP"
 ```
 
 Find people in groups and filter by org:

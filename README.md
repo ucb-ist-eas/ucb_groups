@@ -52,8 +52,10 @@ person.first_name
 => "Joe"
 person.last_name
 => "Smith"
-person.email
-=> "email@berkeley.edu"
+person.public_email
+=> "email-public@berkeley.edu"
+person.official_email
+=> "email-official@berkeley.edu"
 person.orgs
 => "UCBKL-SCHOL-SCHSW-CSDEP"
 ```

@@ -4,8 +4,8 @@ module UcbGroups
 
     def initialize(ldap_entry)
       @dn = ldap_entry[:dn].first.to_s
-      @description = ldap_entry[:description].first.to_s
       @name = ldap_entry[:displayName].first.to_s
+      @description = ldap_entry[:description].first.to_s
       @namespace, @id = parse_dn
     end
 

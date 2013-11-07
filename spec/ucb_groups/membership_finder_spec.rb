@@ -22,7 +22,7 @@ describe "MembershipFinder" do
     end
 
     it "finds users in a multiple groups" do
-      finder.find(:groups => [:deans, :instructors]).should_not be_empty
+      finder.find(:groups => [:deans, 'calmessages-test']).should_not be_empty
     end
   end
 
@@ -41,12 +41,16 @@ describe "MembershipFinder" do
 
   context "Finding by group and org" do
     it "finds users in a single group and org" do
-      campus_it_staff = finder.find(:groups => ["it-staff"])
-      ist_it_staff = finder.find(:groups => ["it-staff"], :orgs => [:VRIST])
+      # Note, the memebers in these two groups may change over time, but it shouldn't
+      # happen very often.  Test will need to be updated when groups members are changed
 
-      campus_it_staff.should_not be_empty
-      ist_it_staff.should_not be_empty
-      (ist_it_staff.length < campus_it_staff.length).should be_true
+      testers = finder.find(:groups => ['calmessages-test'])
+      names = testers.map(&:first_name)
+      names.should =~ ["Sondra", "Veronica", "Steven", "Jeff", "Elise", "Cindy", "Annika"]
+
+      jlstp_testers = finder.find(:groups => ['calmessages-test'], :orgs => [:JLSTP])
+      jlstp_names = jlstp_testers.map(&:first_name)
+      jlstp_names.should =~ ["Sondra", "Jeff", "Veronica"]
     end
   end
 end

@@ -6,7 +6,8 @@ module UcbGroups
         :uid => :uid,
         :first_name => :givenname,
         :last_name => :sn,
-        :email => :mail,
+        :public_email => :mail,
+        :official_email => :ucbemail,
         :orgs => :berkeleyEduPrimaryDeptUnitHierarchyString
     }.freeze
 

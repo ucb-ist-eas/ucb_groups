@@ -34,7 +34,7 @@ module UcbGroups
 
     def group_filter(group)
       Net::LDAP::Filter.
-          eq("ismemberof",
+          eq("berkeleyeduismemberof",
              "cn=edu:berkeley:app:#{self.namespace}:#{group},ou=campus groups,dc=berkeley,dc=edu")
     end
 

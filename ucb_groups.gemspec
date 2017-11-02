@@ -24,6 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rest-client"
   spec.add_development_dependency "json"
 
-  spec.add_runtime_dependency "ucb_ldap", "~> 2.0.0.pre5"
-  spec.add_runtime_dependency "net-ldap", "0.2.2"
+  # removing this from gemspec as we have to use a github version of ucb_ldap to
+  # get the latest net-ldap; client apps will need to add this dependency
+  #spec.add_runtime_dependency "ucb_ldap", "~> 2.0.0.pre5"
+  spec.add_runtime_dependency "net-ldap", "0.16.1"
 end

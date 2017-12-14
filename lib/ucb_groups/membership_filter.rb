@@ -44,7 +44,7 @@ module UcbGroups
     end
 
     def org_filter(org)
-      Net::LDAP::Filter.eq("berkeleyedudeptunithierarchystring", "*#{org}*")
+      Net::LDAP::Filter.eq("departmentnumber", "*#{org}*")
     end
   end
 end

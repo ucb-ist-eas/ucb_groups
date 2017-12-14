@@ -35,7 +35,7 @@ describe "MembershipFinder" do
       jkasd_people = finder.find(:orgs => [:JKASD])
       jkasd_jjcns_people = finder.find(:orgs => [:JKASD, :JJCNS])
 
-      (jkasd_people.length < jkasd_jjcns_people.length).should be_true
+      (jkasd_people.length < jkasd_jjcns_people.length).should == true
     end
   end
 
@@ -46,11 +46,11 @@ describe "MembershipFinder" do
 
       testers = finder.find(:groups => ['calmessages-test'])
       names = testers.map(&:first_name)
-      names.should =~ ["Sondra", "Veronica", "Steven", "Jeff", "Elise", "Cindy", "Annika"]
+      names.should =~ ["Veronica", "Elise", "Jeff"]
 
-      jlstp_testers = finder.find(:groups => ['calmessages-test'], :orgs => [:JLSTP])
+      jlstp_testers = finder.find(:groups => ['calmessages-test'], :orgs => [:JKASD])
       jlstp_names = jlstp_testers.map(&:first_name)
-      jlstp_names.should =~ ["Sondra", "Jeff", "Veronica"]
+      jlstp_names.should =~ ["Elise"]
     end
   end
 end

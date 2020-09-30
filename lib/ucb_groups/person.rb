@@ -8,7 +8,7 @@ module UcbGroups
         :last_name => :sn,
         :public_email => :mail,
         :official_email => :ucbemail,
-        :orgs => :berkeleyEduPrimaryDeptUnitHierarchyString
+        :orgs => :departmentnumber
     }.freeze
 
     attr_accessor *ATTRIBUTE_MAPPINGS.keys

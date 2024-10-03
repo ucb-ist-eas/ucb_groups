@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This repo has been moved to Gitlab. This version is now read-only and may eventually be removed.
+
 # UcbGroups
 
 Finds users that belong to a given ucb group
